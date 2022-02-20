@@ -28,6 +28,7 @@ namespace Server.Controllers
         // metoda ce preia o lista cu TOTI USERII
         public async Task<ActionResult<ServiceResponse<List<User>>>> Get()
         {
+            // await apeleaza metoda asyncrona
             return Ok(await _userService.GetAllUsers());
         }
 
@@ -35,6 +36,7 @@ namespace Server.Controllers
         // metoda ce selecteaza UN SINGUR USER dupa ID
         public async Task<ActionResult<ServiceResponse<User>>> GetSingle(string id)
         {
+            // await apeleaza metoda asyncrona
             return Ok(await _userService.GetUserById(id)); 
         }
 
@@ -42,6 +44,7 @@ namespace Server.Controllers
         // metoda ce creeaza un USER NOU
         public async Task<ActionResult<ServiceResponse<List<User>>>> AddUser(User newUser)
         {
+            // await apeleaza metoda asyncrona
             return Ok(await _userService.AddUser(newUser)); 
         }
     }

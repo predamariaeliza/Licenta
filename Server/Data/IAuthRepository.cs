@@ -12,6 +12,8 @@ namespace Server.Data
     {
         // returneaza un Task cu un ServiceResponse
         Task<ServiceResponse<int>> Register (User user, string pasword);
-        
+        Task<ServiceResponse<string>> Login(string username, string password);
+
+        Task<bool> UserExists(string username);
     }
 }

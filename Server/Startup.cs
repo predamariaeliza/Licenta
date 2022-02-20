@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Server.Services;
+using Server.Services.UserService;
 
 namespace Server
 {
@@ -32,6 +34,14 @@ namespace Server
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Server", Version = "v1" });
             });
+
+            // aici trebuie sa ne inregistram metoda userService
+            // altfel vom avea erori
+            // ***********************
+            // cu alte cuvinte, ii spunem aplicatiei noastre că, in cazul in care
+            // un controller vrea sa sa injecteze UserService, atunci, clasa corespunzatoare
+            // de implementare va fi clasa UserService
+            services.AddScoped<IUserService, UserService>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
