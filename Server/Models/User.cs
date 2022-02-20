@@ -9,6 +9,8 @@ namespace Licenta.Models
         public string Id {get;set;}
         public string Username {get;set;}
         public string Name {get;set;}
+        
+        // pastram doar valoarea Hash, nu si parola in sine
         public byte[] PasswordHash { get; set; }
         public byte[] Salt { get; set; }
                 

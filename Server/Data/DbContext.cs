@@ -4,6 +4,7 @@ using Licenta.Models;
 
 namespace scd_proiect.Data
 {
+    // DBCONTEXT = DATACONTEXT
     public class DbContext : IDbContext
     {
         private readonly IMongoCollection<User> _users; 
