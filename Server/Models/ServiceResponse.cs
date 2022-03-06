@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Server.Models
 {
     /*  <T> reprezinta un service response, si este
@@ -17,5 +19,8 @@ namespace Server.Models
                 Daca apare vreo eroare, aici se va transmite 
         */
         public string Message { get; set; } = null;
+
+        // lista de errori
+        public List<string> Errors { get; set; } = new List<string>();
     }
 }

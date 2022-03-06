@@ -10,7 +10,7 @@ namespace Server.Services.UserService{
         private static List<User> users = new List<User>
         {
             new User(),
-            new User { Id = "1", Name = "Sam"}
+            new User { Id = "1", Username = "Sam"}
         };
 
         // Implementare metoda ADD USERS

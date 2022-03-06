@@ -1,8 +1,9 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Licenta.Models;
+using Server.Data;
 
-namespace scd_proiect.Data
+namespace Server.Data
 {
     // DBCONTEXT = DATACONTEXT
     public class DbContext : IDbContext
