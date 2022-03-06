@@ -1,4 +1,4 @@
-namespace scd_proiect.Data
+namespace Server.Data
 {
     public class DbConfig
     {

@@ -1,8 +1,9 @@
-
 using MongoDB.Driver;
 using Licenta.Models;
+using System.Threading.Tasks;
+using Server.Models;
 
-namespace scd_proiect.Data
+namespace Server.Data
 {
     public interface IDbContext
     {
