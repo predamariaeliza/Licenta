@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Licenta.Models;
 using Microsoft.AspNetCore.Mvc;
 using Server.Dtos.User;
 using Server.Data;

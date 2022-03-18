@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Licenta.Models;
 using MongoDB.Driver;
 using Server.Data;
 using Server.Models;

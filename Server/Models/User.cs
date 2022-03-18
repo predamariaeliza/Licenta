@@ -1,6 +1,6 @@
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Licenta.Models
+namespace Server.Models
 {
     public class User
     {

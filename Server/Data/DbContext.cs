@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using Licenta.Models;
+using Server.Models;
 using Server.Data;
 
 namespace Server.Data
