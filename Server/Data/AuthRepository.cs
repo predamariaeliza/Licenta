@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Licenta.Models;
 using MongoDB.Driver;
 using Server.Data;
 using Server.Models;
@@ -14,7 +13,7 @@ namespace Server.Data
         {
             _users = Data.GetUserCollection();
         }
-        public Task<ServiceResponse<string>> Login(string username, string password)
+        public Task<ServiceResponse<string>> Login(string Username, string Password)
         {
             throw new System.NotImplementedException();
         }

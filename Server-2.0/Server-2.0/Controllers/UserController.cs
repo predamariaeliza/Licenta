@@ -1,16 +1,14 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Server.Models;
-using Server.Services;
+﻿using Microsoft.AspNetCore.Mvc;
+using Server_2._0.Models;
+using Server_2._0.Services;
 
-namespace Server.Controllers
+namespace Server_2._0.Controllers
 {
     /* ATRIBUTE */
     [ApiController]     // atribue raspunsuri HTTP API
     [Route("[controller]")]     /* controller-ul poate fi accesat dupa numele sau
     //                             in acest caz va fi 'User' */
-    
+
     // adaugam mereu ControllerBase
     public class UserController : ControllerBase
     {
@@ -25,7 +23,7 @@ namespace Server.Controllers
 
         [HttpGet("GetAll")]
         // metoda ce preia o lista cu TOTI USERII
-        public async Task<ActionResult<ServiceResponse<List<User>>>> Get()
+        public async Task<ActionResult<ServiceResponse<List<UserModel>>>> Get()
         {
             // await apeleaza metoda asyncrona
             return Ok(await _userService.GetAllUsers());
@@ -33,18 +31,18 @@ namespace Server.Controllers
 
         [HttpGet("{id}")]
         // metoda ce selecteaza UN SINGUR USER dupa ID
-        public async Task<ActionResult<ServiceResponse<User>>> GetSingle(string id)
+        public async Task<ActionResult<ServiceResponse<UserModel>>> GetSingle(string id)
         {
             // await apeleaza metoda asyncrona
-            return Ok(await _userService.GetUserById(id)); 
+            return Ok(await _userService.GetUserById(id));
         }
 
         [HttpPost]
         // metoda ce creeaza un USER NOU
-        public async Task<ActionResult<ServiceResponse<List<User>>>> AddUser(User newUser)
+        public async Task<ActionResult<ServiceResponse<List<UserModel>>>> AddUser(UserModel NewUser)
         {
             // await apeleaza metoda asyncrona
-            return Ok(await _userService.AddUser(newUser)); 
+            return Ok(await _userService.AddUser(NewUser));
         }
     }
 }

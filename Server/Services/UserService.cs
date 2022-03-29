@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Licenta.Models;
 using Server.Models;
 
 namespace Server.Services.UserService{

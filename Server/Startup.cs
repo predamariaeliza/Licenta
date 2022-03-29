@@ -31,11 +31,12 @@ namespace Server
         {
 
             services.AddControllers();
+            services.AddSingleton<IDbContext, DbContext>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Server", Version = "v1" });
             });
-            services.AddSingleton<IDbContext, DbContext>();
+            
 
             // aici trebuie sa ne inregistram metoda userService
             // altfel vom avea erori

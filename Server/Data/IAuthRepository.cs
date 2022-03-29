@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Licenta.Models;
 using Server.Models;
 
 namespace Server.Data
