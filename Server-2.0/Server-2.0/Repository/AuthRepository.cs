@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using Server_2._0.Data;
 using Server_2._0.Models;
+using Server_2._0.Hashing;
 
 namespace Server_2._0.Repository
 {
@@ -10,12 +11,14 @@ namespace Server_2._0.Repository
     {
         private readonly IMongoCollection<UserModel> _users;
         private readonly IConfiguration _configuration;
+        private readonly IJwtToken _jwtToken;
 
         // constructor => contine numele clasei si creeaza obiecte
-        public AuthRepository(IDbContext DataContext, IConfiguration configuration)
+        public AuthRepository(IDbContext DataContext, IConfiguration configuration, IJwtToken JwtToken)
         {
             _users = DataContext.GetUserCollection();
             _configuration = configuration;
+            _jwtToken = JwtToken;
         }
         public async Task<ServiceResponse<string>> Login(string Username, string Password)
         {
@@ -33,7 +36,9 @@ namespace Server_2._0.Repository
             }
             else
             {
-                response.Data = user.Id.ToString();
+                response.Data = _jwtToken.CreateToken(user);
+                response.Success = true;
+                response.Message = "You have successfully logged in!";
             }
             return response;
         }
@@ -122,6 +127,8 @@ namespace Server_2._0.Repository
                 return true;
             }
         }
+
+       
     }
 
 
