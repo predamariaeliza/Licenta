@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Server_2._0.Models;
 using Server_2._0.Services;
 
 namespace Server_2._0.Controllers
 {
     /* ATRIBUTE */
+    [Authorize]
     [ApiController]     // atribue raspunsuri HTTP API
     [Route("[controller]")]     /* controller-ul poate fi accesat dupa numele sau
     //                             in acest caz va fi 'User' */
