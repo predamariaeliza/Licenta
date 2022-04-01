@@ -12,10 +12,10 @@ namespace Server_2._0.Data
         {
             var client = new MongoClient(DbConfig.Value.ConnectionString);
             var database = client.GetDatabase(DbConfig.Value.DatabaseName);
-            _users = database.GetCollection<UserModel>("User");
+            _users = database.GetCollection<UserModel>("User"); //ia baza de date
 
         }
-        public IMongoCollection<UserModel> GetUserCollection() => _users;
+        public IMongoCollection<UserModel> GetUserCollection() => _users; // imi ia data din baza de date
 
 
     }

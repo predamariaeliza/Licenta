@@ -25,18 +25,35 @@ namespace Server_2._0.Controllers
 
         [HttpGet("GetAll")]
         // metoda ce preia o lista cu TOTI USERII
-        public async Task<ActionResult<ServiceResponse<List<UserModel>>>> Get()
+        public async Task<IActionResult> GetAll()
         {
             // await apeleaza metoda asyncrona
-            return Ok(await _userService.GetAllUsers());
+            var response = await _userService.GetAllUsers();
+
+            //verificam daca operatiunea a avut succes
+            if(response.Success)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest(response);
+            }
+        }
+
+        [HttpGet("{email}")]
+        //metoda ce preia utilizatorul dupa email
+        public async Task<ActionResult<ServiceResponse<UserModel>>> GetByEmail(String Email)
+        {
+            return Ok(await _userService.GetUserByEmail(Email));
         }
 
         [HttpGet("{id}")]
         // metoda ce selecteaza UN SINGUR USER dupa ID
-        public async Task<ActionResult<ServiceResponse<UserModel>>> GetSingle(string id)
+        public async Task<ActionResult<ServiceResponse<UserModel>>> GetSingle(String Id)
         {
             // await apeleaza metoda asyncrona
-            return Ok(await _userService.GetUserById(id));
+            return Ok(await _userService.GetUserById(Id));
         }
 
         [HttpPost]
