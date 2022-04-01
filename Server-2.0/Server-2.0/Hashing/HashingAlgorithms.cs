@@ -1,8 +1,8 @@
 ﻿namespace Server_2._0.Hashing
 {
-    public class HashingAlgorithms
+    public static class HashingAlgorithms
     {
-        public void CreateHash(String Password, out byte[] Hash, out byte[] Salt)
+        public static void CreateHash(String Password, out byte[] Hash, out byte[] Salt)
         //Creates a hash and a salt from password using sha1 algorithm
         {
             var hmac = new System.Security.Cryptography.HMACSHA1();
@@ -12,7 +12,7 @@
             hmac.Dispose();
         }
 
-        public bool VerifyHash(String Password, byte[] Hash, byte[] Salt)
+        public static bool VerifyHash(String Password, byte[] Hash, byte[] Salt)
         {
             var hmac = new System.Security.Cryptography.HMACSHA1(Salt);
             var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(Password));

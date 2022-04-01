@@ -13,7 +13,7 @@ namespace Server_2._0.Models
 
         // pastram doar valoarea Hash, nu si parola in sine
         public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; internal set; }
+        public byte[] PasswordSalt { get;  set; }
         public string Role { get; set; } = "User";
       
     }
