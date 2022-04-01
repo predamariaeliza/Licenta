@@ -6,10 +6,7 @@ using Server_2._0.Data;
 using Server_2._0.Hashing;
 using Server_2._0.Repository;
 using Server_2._0.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
-using Microsoft.OpenApi.Models;
-using Configuration = System.Configuration.ConfigurationManager;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
